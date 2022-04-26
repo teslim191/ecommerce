@@ -1,0 +1,208 @@
+
+
+/* homepage */
+
+  
+#nav{
+    color: black;
+}
+#nav:hover{
+background-color: #003399;
+color: snow; 
+transition: 1s;
+}
+
+#ban{
+    margin-top: 50px;
+    background-image: url(banners/bag\ guyy.jpg);
+    height: 90vh;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding: 100px 80px;
+    
+
+}
+@media (max-width:799px){
+    
+    #ban{height: 60vh;
+    }
+    #ban2{height: 60vh;
+    }
+}
+#east{
+    background-image: url(banners/easter.jpg);
+    height: 50vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+ 
+}
+#ban h4{
+    padding-bottom: -10px;
+}
+#ban h1{
+   color: white;
+}
+#ban2{
+    margin-top: 50px;
+    background-image: url(banners/beautiful-smiling-young-blonde-woman-pointing-sunglasses-holding-shopping-bags-credit-card-pink-wall.jpg);
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding: 100px 80px;
+    
+}
+#vid{
+    margin-top: 90px;
+    height: 90vh;
+    width: 100%;
+}
+
+#con:hover{
+    box-shadow : 2px 2px 5px black;    
+
+}
+#button{
+
+    background-size: cover;
+    background-color: black;
+    color:white ;
+    border-radius : 20px 20px 20px 20px;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 100px;
+    box-sizing: content-box;
+    
+}
+#button:hover{
+    color: black;
+    background-color: white;
+}
+
+#fem{
+    background-image: url(femtech/fiti\ front\ view.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    box-shadow: 2px 2px 5px black ;
+}
+
+#but{
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px;
+}
+#but:hover{
+  border: none;
+   background-color: rgba(0, 0, 0, 0.678);
+}
+#femt{
+    background-image: url(femtech/pc\ clinic.jpg);
+    background-size: cover;
+    background-position:center ;
+    height:40vh ;
+    box-shadow:  2px 2px 5px black;
+
+}
+#conn:hover{
+    box-shadow : 2px 2px 5px black;    
+}
+
+/* ///////////////////////////////////////Redmi page/////////////////////////////////////// */
+
+
+#not:hover{
+    box-shadow: 2px 2px 5px black;
+}
+
+/* 
+///////////////////////////shop page//////////////////////////////// */
+.star{
+    color: #e4cd04;
+}
+#pagination a{
+ text-decoration: none;
+ background-color: #003399;
+ padding: 15px;
+ color: white;
+ border-radius: 4px;
+ font-weight: 600;
+
+}
+
+/*///////////////////////// table//////////////////////////////// */
+
+#tab table{
+    width: 100%;
+    border-collapse: collapse; 
+    table-layout: fixed; 
+    white-space: nowrap;
+}
+#tab table td:nth-child(1){
+    width: 100px;
+    text-align: center;
+}
+#tab table td:nth-child(2){
+    width: 150px;
+    text-align:center;
+}
+#tab table td:nth-child(3){
+    width: 250px;
+    text-align:center;
+}
+#tab table td:nth-child(4) {
+    width: 150px;
+    text-align:center;
+}
+#tab table td:nth-child(5)  {
+    width: 150px;
+    text-align:center;
+}
+#tab table td:nth-child(6)  {
+    width: 150px;
+    text-align:center;
+}
+#tab table td:nth-child(7)  {
+    width: 200px;
+    text-align:center;
+}
+
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+
+
+#dash{
+    background-color: #1d015a;
+    background-image: url(/Laptop/andras-vas-Bd7gNnWJBkU-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 15px;
+
+}
+
+#ddcon{
+    background-color: #12072a;
+    border-spacing: 5px;
+}
+#dcon{
+ color: white;
+ text-decoration: none;
+}
+
