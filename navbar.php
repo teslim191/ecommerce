@@ -18,11 +18,10 @@
         <a id="nav" class="nav-link active px-3" href="contact.php">Contact</a>
         <a id="nav" class="nav-link active px-3" href="cart.php"> <i class="fa-solid fa-shopping-cart position-relative">
             <span id='cart-item' class="badge rounded-square bg-danger">
-
               <span class="visually-hidden">Cart</span>
             </span>
           </i></a>
-
+        <a id="nav" class="nav-link active px-3" href="logout.php">Logout</a>
       </div>
     </div>
   </div>

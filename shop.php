@@ -34,14 +34,12 @@
                 <h5 class="card-text text-center text-dark"><i class=""></i>&nbsp;&nbsp;<span>₦</span><?= number_format($row['product_price'], 2) ?></h5>
                 <p><?= substr($row['product_desc'], 0, 20) . "..."    ?></p>
                 <div class='star'>
-  
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-
-</div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
                 <a href="productdetails.php?id=<?= $row['id'] ?>" style='color:white; background-color: #003399'; class="btn">read more</a>
 
               </div>
@@ -72,122 +70,7 @@
   </div>
 
   
-  <div class="container-fluid">
-    <center>
-    
-    </center>
 
-    <section class="p-1">
-      <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-            <div  id="conn" class="card" style="width: 18rem;">
-              <div class="container-fluid pt-3">
-              <img src="Phones/redmi.jpg" class="card-img-top" alt="...">
-              </div>
-              <div class="card-body">
-                <p class="card-text"> <b>Redmi 11 Series</b></p> 
-                 <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-             </div>
-             </div>
-           </div>
-                
-              
-
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-            <div  id="conn" class="card" style="width: 18rem;">
-              <div class="container-fluid pt-3">
-                <img src="Phones/S22 ultra white.jpg" class="card-img-top" alt="...">
-                </div>
-              <div class="card-body">
-                <p class="card-text"> <b>Samsung S22 Ultra pebble white</b></p> 
-              <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-             </div>
-             </div>
-           </div>
-             
-                
-               
-               
-
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-            <div  id="conn" class="card" style="width: 18rem;">
-              <div class="container-fluid pt-3">
-                <img src="Phones/galaxy z tab.jpg" class="card-img-top" alt="..." height="240px">
-                </div>
-              <div class="card-body">
-                <p class="card-text"> <b>Galaxy Z Tab</b></p> 
-              <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-             </div>
-             </div>
-           </div>
-                
-              
-               
-
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-            <div  id="conn" class="card" style="width: 18rem;">
-              <div class="container-fluid pt-3">
-                <img src="Laptop/pro book.jpg" class="card-img-top" alt="..." height="240px">
-                </div>
-              <div class="card-body">
-                <p class="card-text"> <b>Samsung Book2 Pro 360</b></p> 
-              <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-             </div>
-             </div>
-           </div>
-                
-                
-           <div class="col-lg-3col-md-3 col-sm-3 col-xs-3   pt-5">
-             <div  id="conn" class="card" style="width: 18rem;">
-               <div class="container-fluid pt-3">
-                 <img src="Smart watch/OSW-16_680_-_2_800x.jpg" class="card-img-top" alt="...">
-              </div>
-               <div class="card-body">
-                 <p class="card-text"> <b>OSW-16 Smart watch</b></p> 
-                <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-               </div>
-             </div>
-          </div>
-   
-             <div class="col-lg-3col-md-3 col-sm-3 col-xs-3  pt-5">
-               <div id="conn"  class="card" style="width: 18rem;">
-                 <div class="container-fluid pt-3">
-                   <img src="Smart watch/Oraimo Smart watch.png" class="card-img-top" alt="...">
-                   </div>
-                 <div class="card-body">
-                   <p class="card-text"> <b>Oraimo Smart Watch</b></p> 
-                  <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-                 </div>
-                 </div>
-               </div>
-         
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3   pt-5">
-                 <div  id="conn" class="card" style="width: 18rem;">
-                   <div class="container-fluid pt-3">
-                     <img src="Laptop/lenovos145-500x500.jpg" class="card-img-top" alt="...">
-                     </div>
-                   <div class="card-body">
-                     <p class="card-text"> <b>Lenovo 145</b></p>
-                    <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-                   </div>
-                   </div>
-                 </div>
-           
-                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3   pt-5">
-                   <div  id="conn" class="card" style="width: 18rem;">
-                     <div class="container-fluid pt-3">
-                       <img src="Smart watch/Oraimo bud.png" class="card-img-top" alt="...">
-                       </div>
-                     <div class="card-body">
-                       <p class="card-text"> <b>Oraimo Buds</b></p> 
-                      <a href="shop.php" style="background-color:#003399; padding:7px; color:white; border:0px solid black;text-decoration:none;">Shop Now</a>
-                     </div>
-                     </div>
-                   </div>
-
-                  </div>
-                </section>
-               </div>
   <!-- Displaying Products End -->
 
 

@@ -4,6 +4,7 @@ include'connection/dbase.php';
 if(isset($_POST['submit'])){
     $pname = $_POST['pname'];
     $pprice = $_POST['pprice'];
+    $type = $_POST['type'];
     $quan = $_POST['pquantity'];
     $des = $_POST['pdescription'];
     $code = $_POST['pcode'];
@@ -11,19 +12,19 @@ if(isset($_POST['submit'])){
     $tmp_name = $_FILES['file']['tmp_name'];
     $path = "product_image/$pimage";
 
-    if(empty($pname) || empty($pimage) || empty($pprice) || empty($quan) || empty($des) || empty($code)){
+    if(empty($pname) || empty($pimage)|| empty($type) || empty($pprice) || empty($quan) || empty($des) || empty($code)){
      echo" <script>alert('All fields required')</script> ";
     }
     else{
         $upload = move_uploaded_file($tmp_name, $path);
-        $query ="INSERT INTO product(product_name,product_image,product_price,product_qty,product_desc,product_code) VALUES ('$pname','$pimage','$pprice','$quan','$des','$code')";
+        $query ="INSERT INTO product(product_name,product_image,product_type,product_price,product_qty,product_desc,product_code) VALUES ('$pname','$pimage','$type','$pprice','$quan','$des','$code')";
         $result = mysqli_query($con, $query);
            if($result){
             echo" <script>alert('Poducts Info successfully uploaded to database')</script> ";
             header('Refresh: 0; url=Admindashb.php');
            }
            else{
-            echo" <script>alert('Unable to upload data')</script> ";
+            echo mysqli_error($con);
            }
     }
 }
@@ -42,7 +43,9 @@ if(isset($_POST['submit'])){
     <title>product upload</title>
 </head>
 <body>
-    <div class=" container-fluid col-lg-4">
+    <?php include "navbar.php";  ?>
+    <div class=" container-fluid col-lg-4 mt-5 pt-5">
+        <h3 style="color: #003399;" class="">Product Upload</h3>
     <form action="" method='POST' enctype='multipart/form-data'>
         
        <label class='form-label' for="">Product name</label>
@@ -51,6 +54,12 @@ if(isset($_POST['submit'])){
        <input type="file" name='file' class='form-control'>
        <label class='form-label mt-3' for="">Price</label>
        <input type="text" name='pprice' class='form-control'>
+       <label class='form-label mt-3' for="">Type</label>
+       <select name="type" id="" class="form-control">
+           <option value="">--select one--</option>
+           <option value="featured">Featured</option>
+           <option value="regular">Regular</option>
+       </select>
        <label class='form-label mt-3' for="">Quantity</label>
        <input type="number" name='pquantity' value='1' class='form-control'>
        <label class='form-label mt-3' for="">Description</label>

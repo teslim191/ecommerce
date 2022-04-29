@@ -2,8 +2,8 @@
 include 'connection/dbase.php';
 session_start();
 
-if (isset($_SESSION['name'])) {
-  header('Location: dashb.php');
+if (isset($_SESSION['email'])) {
+  header('Location: Admindashb.php');
 } else {
   if (isset($_POST['submit'])) {
     $email = $_POST['email'];
@@ -11,16 +11,17 @@ if (isset($_SESSION['name'])) {
     $hash_password = sha1($password);
 
     if (empty($email) or empty($password)) {
-      // $alert= "<class='alert alert-warning alert-dismissible fade show fixed-bottom' role='alert'>
-      // <strong>Missing Info</strong> You should check in on some of those fields below.
-      // <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-      // </div>";
+      // $alert= "";
       $alert = "All fields are required.";
     } else {
-      $query = "SELECT * FROM signup WHERE  Email = '$email' and Password = '$hash_password'";
-      $result = mysqli_query($con, $query);
-      if ($result) {
-        while ($arr = mysqli_fetch_array($result)) {
+      $query = "SELECT * FROM admin WHERE  Email = '$email' and Password = '$hash_password'";
+      $res = mysqli_query($con, $query);
+      if (mysqli_num_rows($res) == 0) {
+        $alert = "Incorrect Email or Password";
+      }
+      else 
+      {
+        while ($arr = mysqli_fetch_array($res)) {
           $name = $arr['Name'];
           $email = $arr['Email'];
           $password = $arr['Password'];
@@ -29,18 +30,20 @@ if (isset($_SESSION['name'])) {
           $_SESSION['email'] = $email;
 
 
-          header('Refresh: 0; url=Home.php');
-          echo "<script> alert('Welcome $name') </script>";
-        }
-      } else {
-        // $alert= "<div style='margin-top: 100px;' class='alert alert-danger alert-dismissible fade show fixed-bottom' role='alert'>
-        // <strong>Unable To Log In User</strong> 
-        // <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-        // </div>";
-        $alert = "Unable To Log In User. Incorrect Email or Password";
+          header('Refresh: 0; url=Admindashb.php');
+          echo "<div class='alert alert-success alert-dismissible fade show fixed-bottom' role='alert'>
+          <strong>Welcome $name</strong>
+          <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+          </div>";
+        }    
       }
+ 
+
+        }
+
+      
     }
-  }
+  
 
 ?>
 

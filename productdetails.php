@@ -22,12 +22,16 @@ if (isset($_GET["id"])) {
         while ($row = mysqli_fetch_array($result)) {
             $name = $row["product_name"];
             $desc = $row["product_desc"];
+            $img = $row["product_image"];
             
             echo"
             <h3 style='margin-top:100px;' class='text-center'>$name</h3>
                 <div class='container'>
                     <div class='row'>
                         <div class='col-lg-9'>
+                        <div class='card'  style='max-width: 50%'>
+                            <img src='product_image/$img' alt=''>
+                        </div>
                             <p>$desc</p>
                         </div>
                         <div class='col-lg-3'>

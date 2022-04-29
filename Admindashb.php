@@ -29,7 +29,7 @@ else {
 
     
     <?php 
-    $query = "SELECT * FROM signup WHERE Email = '$email' ";
+    $query = "SELECT * FROM admin WHERE Email = '$email' ";
     $result = mysqli_query($con, $query);
     if($result){
         while($arr = mysqli_fetch_array($result)){
@@ -55,7 +55,7 @@ else {
            </center>
            
         <section style='padding:15px;'  id='ddcon'>
-          <a id='dcon' href='logout2.php'><i class='fa-solid fa-arrow-right-from-bracket fa-2x'></i> Logout </a> 
+          <a id='dcon' href='logout.php'><i class='fa-solid fa-arrow-right-from-bracket fa-2x'></i> Logout </a> 
         </section>
             
         </div>

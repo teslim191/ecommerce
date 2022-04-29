@@ -1,20 +1,20 @@
 <?php
-include'connection/dbase.php';
+include 'connection/dbase.php';
 session_start();
 $name = $_SESSION['name'];
 $email = $_SESSION['email'];
 
-if (!isset($_SESSION['name'])){
-    header('Refresh : 0; url=login.php');
-    echo"<script>('You are Unauthorised to view this page')</script>";
-}
-else {
+if (!isset($_SESSION['email'])) {
+  header('Refresh : 0; url=login.php');
+  echo "<script>('You are Unauthorised to view this page')</script>";
+} else {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,30 +23,22 @@ else {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Profile</title>
-</head>
-<body>
-    <?php include'navbar.php'?>
+  </head>
 
-    
-    <?php 
-    $query = "SELECT * FROM signup WHERE Email = '$email' ";
+  <body>
+    <?php include 'navbar.php' ?>
+
+
+    <?php
+    $query = "SELECT * FROM admin WHERE Email = '$email' ";
     $result = mysqli_query($con, $query);
-    if($result){
-        while($arr = mysqli_fetch_array($result)){
-            $name = $arr['Name'];
-            $email = $arr['Email'];
-            $img = $arr['File'];
-            $add = $arr['Address'];
-            $con = $arr['Country'];
-            $sta = $arr['State'];
-            $city = $arr['City'];
-          }
-
-           
-
-    
-
-            echo"
+    if ($result) {
+      while ($arr = mysqli_fetch_array($result)) {
+        $name = $arr['Name'];
+        $email = $arr['Email'];
+        $img = $arr['File'];
+      }
+      echo "
             <center>
             <h1 style='margin-top:150px; border-bottom: 2px solid black;width: 25%;'>
             Dashboard </h1>
@@ -119,19 +111,19 @@ else {
         </div>
         </div>
             </section>";
-                
-}
-?>
+    }
+    ?>
 
-    <?php include'news.php'?>
-    <?php include'footer.php'?>
-    
+    <?php include 'news.php' ?>
+    <?php include 'footer.php' ?>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   
- 
-   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-  
-<?php } ?>
-</body>
-</html>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <?php } ?>
+  </body>
+
+  </html>
