@@ -146,3 +146,35 @@ $(document).ready(function(){
   
 </body>
 </html>
+
+<?php
+$_SERVER;
+$_REQUEST;
+$_POST;
+$_GET;
+$$_FILES;
+$_SESSION;
+$_COOKIE;
+$_ENV;
+
+
+
+if (issse) {
+  # code...
+}
+
+
+
+
+
+
+
+?>
+
+<form action="" method="POST">
+  <label for="">Full name</label>
+  <input type="text"  name="fullname">
+  <label for="">Email</label>
+  <input type="email" name="email">
+  <input type="submit">
+</form>
