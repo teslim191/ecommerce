@@ -1,20 +1,20 @@
 <?php
-  include'connection/dbase.php';
-  session_start();
-  $name = $_SESSION['name'];
-  $email = $_SESSION['email'];
+include 'connection/dbase.php';
+session_start();
+$name = $_SESSION['name'];
+$email = $_SESSION['email'];
 
-if (!isset($_SESSION['email'])){
+if (!isset($_SESSION['email'])) {
   header('Refresh : 0; url=login.php');
-  echo"<script>('You are Unauthorised to view this page')</script>";
-}
-else {
+  echo "<script>('You are Unauthorised to view this page')</script>";
+} else {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,21 +23,22 @@ else {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Profile</title>
-</head>
-<body>
-    <?php include 'navbar.php';?>
+  </head>
 
-    
-    <?php 
+  <body>
+    <?php include 'navbar.php'; ?>
+
+
+    <?php
     $query = "SELECT * FROM admin WHERE Email = '$email' ";
     $result = mysqli_query($con, $query);
-    if($result){
-        while($arr = mysqli_fetch_array($result)){
-            $name = $arr['Name'];
-            $email = $arr['Email'];
-            $img = $arr['File'];
-          
-            echo"
+    if ($result) {
+      while ($arr = mysqli_fetch_array($result)) {
+        $name = $arr['Name'];
+        $email = $arr['Email'];
+        $img = $arr['File'];
+
+        echo "
             <center>
             <h1 style='margin-top:150px; border-bottom: 2px solid black;width: 35%;'>
            Admin Dashboard </h1>
@@ -78,91 +79,71 @@ else {
         
     </div>
        </section> ";
-          }
-
-           
-
-    
-
-                
-}
-?>
-
-  <?php include'news.php'?>
-  <?php include'footer.php'?>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-
-      // Send product details to the server
-      $(".addItemBtn").click(function(e) {
-        e.preventDefault();
-        var $form = $(this).closest(".form-submit");
-        var pid = $form.find(".pid").val();
-        var pname = $form.find(".pname").val();
-        var pprice = $form.find(".pprice").val();
-        var pimage = $form.find(".pimage").val();
-        var pcode = $form.find(".pcode").val();
-
-        var pqty = $form.find(".pqty").val();
-
-        $.ajax({
-          url: 'action.php',
-          method: 'post',
-          data: {
-            pid: pid,
-            pname: pname,
-            pprice: pprice,
-            pqty: pqty,
-            pimage: pimage,
-            pcode: pcode
-          },
-          success: function(response) {
-            $("#message").html(response);
-            window.scrollTo(0, 0);
-            load_cart_item_number();
-          }
-        });
-      });
-
-      // Load total no.of items added in the cart and display in the navbar
-      load_cart_item_number();
-
-      function load_cart_item_number() {
-        $.ajax({
-          url: 'action.php',
-          method: 'get',
-          data: {
-            cartItem: "cart_item"
-          },
-          success: function(response) {
-            $("#cart-item").html(response);
-          }
-        });
       }
-    });
-  </script>
-    
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   
- 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-  
-<?php } ?>
-</body>
-</html>
-               
-               
-                     
-                                     
-                                   
-                       
+    }
+    ?>
 
-                        
-                     
+    <?php include 'news.php' ?>
+    <?php include 'footer.php' ?>
 
-  
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        // Send product details to the server
+        $(".addItemBtn").click(function(e) {
+          e.preventDefault();
+          var $form = $(this).closest(".form-submit");
+          var pid = $form.find(".pid").val();
+          var pname = $form.find(".pname").val();
+          var pprice = $form.find(".pprice").val();
+          var pimage = $form.find(".pimage").val();
+          var pcode = $form.find(".pcode").val();
+
+          var pqty = $form.find(".pqty").val();
+
+          $.ajax({
+            url: 'action.php',
+            method: 'post',
+            data: {
+              pid: pid,
+              pname: pname,
+              pprice: pprice,
+              pqty: pqty,
+              pimage: pimage,
+              pcode: pcode
+            },
+            success: function(response) {
+              $("#message").html(response);
+              window.scrollTo(0, 0);
+              load_cart_item_number();
+            }
+          });
+        });
+
+        // Load total no.of items added in the cart and display in the navbar
+        load_cart_item_number();
+
+        function load_cart_item_number() {
+          $.ajax({
+            url: 'action.php',
+            method: 'get',
+            data: {
+              cartItem: "cart_item"
+            },
+            success: function(response) {
+              $("#cart-item").html(response);
+            }
+          });
+        }
+      });
+    </script>
+
+
+
+  <?php } ?>
+  </body>
+
+  </html>
