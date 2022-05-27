@@ -18,9 +18,7 @@ if (isset($_SESSION['email'])) {
       $res = mysqli_query($con, $query);
       if (mysqli_num_rows($res) == 0) {
         $alert = "Incorrect Email or Password";
-      }
-      else 
-      {
+      } else {
         while ($arr = mysqli_fetch_array($res)) {
           $name = $arr['Name'];
           $email = $arr['Email'];
@@ -35,15 +33,11 @@ if (isset($_SESSION['email'])) {
           <strong>Welcome $name</strong>
           <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
           </div>";
-        }    
-      }
- 
-
         }
-
-      
+      }
     }
-  
+  }
+
 
 ?>
 
@@ -70,26 +64,26 @@ if (isset($_SESSION['email'])) {
     </nav>
 
     <div class="container p-5">
-    <h3 class="pt-5 mt-5" style="color: #003399;">Login</h3>
-    <form method='POST' style="">
-    <?php echo "<span style='color:red;font-size:1.5rem;'>" .@$alert. "</span>"; ?>
-      <div class="mb-3 col-lg-4">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" placeholder="example@gmail.com" name='email' aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text"></div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-lg-4">
-          <label for="password" class="form-label">Password</label>
-          <div class="input-group mb-3">
-            <input type="password" name="password" placeholder="Password" class="form-control" id="password" aria-describedby="basic-addon1">
-            <span class="input-group-text" id=""><i id="eye" class="fas fa-eye-slash"></i></span>
-            </div>
+      <h3 class="pt-5 mt-5" style="color: #003399;">Login</h3>
+      <form method='POST' style="">
+        <?php echo "<span style='color:red;font-size:1.5rem;'>" . @$alert . "</span>"; ?>
+        <div class="mb-3 col-lg-4">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" placeholder="example@gmail.com" name='email' aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text"></div>
         </div>
-      </div>
-      <button style="background-color:#003399 ; color: snow;" type="submit" class="btn" name='submit'>Submit</button><span> Don't have an account yet? No worries click <a id="sign" style="color: #003399;" class="text-decoration-none" href="signup.php"><b>Here</b></a> to sign up</span>
+        <div class="row mb-3">
+          <div class="col-lg-4">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group mb-3">
+              <input type="password" name="password" placeholder="Password" class="form-control" id="password" aria-describedby="basic-addon1">
+              <span class="input-group-text" id=""><i id="eye" class="fas fa-eye-slash"></i></span>
+            </div>
+          </div>
+        </div>
+        <button style="background-color:#003399 ; color: snow;" type="submit" class="btn" name='submit'>Submit</button><span> Don't have an account yet? No worries click <a id="sign" style="color: #003399;" class="text-decoration-none" href="signup.php"><b>Here</b></a> to sign up</span>
 
-    </form>
+      </form>
     </div>
 
 

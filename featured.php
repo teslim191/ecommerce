@@ -71,15 +71,15 @@ if ($result) {
                 <nav aria-label='Page navigation example'>
                     <ul class='pagination justify-content-center'>
                         <li>
-                            <a href="home.php?page=<?=$previous; ?>">
+                            <a href="index.php?page=<?=$previous; ?>">
                             <span>&laquo;previous</span>
                             </a>
                         </li>
                     <?php for ($page=1; $page <= $number_of_pages; $page++): ?>
-                        <li class='page-item'><a class="page-link" href="home.php?page=<?=$page; ?>"><?= $page; ?></a></li>
+                        <li class='page-item'><a class="page-link" href="index.php?page=<?=$page; ?>"><?= $page; ?></a></li>
                     <?php endfor;     ?>
                         <li>
-                            <a href="home.php?page=<?=$next; ?>">
+                            <a href="index.php?page=<?=$next; ?>">
                             <span>next &raquo;</span>
                             </a>
                         </li> 
